@@ -11,3 +11,66 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#my-div {
+ margin-left: 0;
+ margin-right: 0;
+}
+.dark{
+  background-color: #1d1d1d;
+  color: #fff;
+}
+
+.btn-sm {
+  width: 100px; /* adjust the width as needed */
+  display: block;
+  margin: 0 auto;
+}
+.reaction-button {
+  display: flex;
+  justify-content: space-around;
+}
+
+.reaction-button .btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.reaction-button .btn:hover {
+  transform: scale(1.2);
+}
+
+.reaction-button .btn.active {
+  transform: scale(1.5);
+}
+
+.reaction-button .like i {
+  color: #3b5998;
+}
+
+.reaction-button .love i {
+  color: #e60023;
+}
+
+
+.reaction-button .wow i {
+  color: #f7b928;
+}
+
+.reaction-button .sad i {
+  color: #f7b928;
+}
+
+.reaction-button .angry i {
+  color: #dc4e41;
+}
+
+.reaction-button .like.active i {
+  animation: thumbsUp 1s ease-in-out;
+}
+
+.reaction-button .love.active i {
+  animation: heartBeat 1s ease-in-out;
+}
+
