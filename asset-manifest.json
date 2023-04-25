@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/dragon-news-client-part/static/css/main.96f91a19.css",
+    "main.js": "/dragon-news-client-part/static/js/main.23566077.js",
+    "static/js/787.7cb2c191.chunk.js": "/dragon-news-client-part/static/js/787.7cb2c191.chunk.js",
+    "index.html": "/dragon-news-client-part/index.html",
+    "main.96f91a19.css.map": "/dragon-news-client-part/static/css/main.96f91a19.css.map",
+    "main.23566077.js.map": "/dragon-news-client-part/static/js/main.23566077.js.map",
+    "787.7cb2c191.chunk.js.map": "/dragon-news-client-part/static/js/787.7cb2c191.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.96f91a19.css",
+    "static/js/main.23566077.js"
+  ]
+}
