@@ -1,21 +1,25 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
-import app from '../../firebase/firebase.config';
+import app from '../../Firebase/Firebase.config';
+
+
+
+
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [loader, setLoader]=useState(true)
+    const [loader, setLoader] = useState(true)
 
     const providerLogin = (provider) => {
-          setLoader(true)
+        setLoader(true)
         return signInWithPopup(auth, provider);
     }
 
     const createUser = (email, password) => {
-          setLoader(true)
+        setLoader(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
@@ -24,10 +28,10 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const verifyEmail =()=>{
-         return sendEmailVerification(auth.currentUser)
+    const verifyEmail = () => {
+        return sendEmailVerification(auth.currentUser)
     }
-    const upDateProfile=(profile)=>{
+    const upDateProfile = (profile) => {
         return updateProfile(auth.currentUser, profile)
     }
 
@@ -39,11 +43,11 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             console.log('inside auth state change', currentUser);
-           
-            if(  currentUser === null ||currentUser.emailVerified){
+
+            if (currentUser === null || currentUser.emailVerified) {
                 setUser(currentUser)
             }
-             setLoader(false)
+            setLoader(false)
         });
 
         return () => {
@@ -53,16 +57,17 @@ const AuthProvider = ({ children }) => {
     }, [])
 
 
-    const authInfo = { 
+    const authInfo = {
         user,
-        upDateProfile, 
-        providerLogin, 
+        upDateProfile,
+        providerLogin,
         logOut,
-         createUser, 
-         setLoader,
-         signIn,
-         verifyEmail,
-         loader};
+        createUser,
+        setLoader,
+        signIn,
+        verifyEmail,
+        loader
+    };
 
     return (
         <AuthContext.Provider value={authInfo}>
